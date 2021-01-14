@@ -1,0 +1,229 @@
+******************************************************************************
+             TMS320C2000 Linker PC v20.2.1                     
+******************************************************************************
+>> Linked Fri Jan 15 00:26:43 2021
+
+OUTPUT FILE NAME:   <TI-TMS320F28027-I2C-SSD1306.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 003f7000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  RAMM0                 00000050   000003b0  00000000  000003b0  RWIX
+  OTP                   003d7800   00000400  00000000  00000400  RWIX
+  FLASHB                003f6000   00001000  00000000  00001000  RWIX
+  FLASHA                003f7000   00000f80  000000f7  00000e89  RWIX
+  CSM_RSVD              003f7f80   00000076  00000000  00000076  RWIX
+  BEGIN                 003f7ff6   00000002  00000000  00000002  RWIX
+  CSM_PWL_P0            003f7ff8   00000008  00000000  00000008  RWIX
+  IQTABLES              003fe000   00000b50  00000000  00000b50  RWIX
+  IQTABLES2             003feb50   0000008c  00000000  0000008c  RWIX
+  IQTABLES3             003febdc   000000aa  00000000  000000aa  RWIX
+  ROM                   003ff27c   00000d44  00000000  00000d44  RWIX
+  RESET                 003fffc0   00000002  00000000  00000002  RWIX
+  VECTORS               003fffc2   0000003e  00000000  0000003e  RWIX
+
+PAGE 1:
+  BOOT_RSVD             00000000   00000050  00000000  00000050  RWIX
+  RAMM1                 00000400   00000400  0000030a  000000f6  RWIX
+  DEV_EMU               00000880   00000105  00000000  00000105  RWIX
+  SYS_PWR_CTL           00000985   00000003  00000000  00000003  RWIX
+  FLASH_REGS            00000a80   00000060  00000000  00000060  RWIX
+  CSM                   00000ae0   00000010  00000000  00000010  RWIX
+  ADC_RESULT            00000b00   00000020  00000000  00000020  RWIX
+  CPU_TIMER0            00000c00   00000008  00000000  00000008  RWIX
+  CPU_TIMER1            00000c08   00000008  00000000  00000008  RWIX
+  CPU_TIMER2            00000c10   00000008  00000000  00000008  RWIX
+  PIE_CTRL              00000ce0   00000020  00000000  00000020  RWIX
+  PIE_VECT              00000d00   00000100  00000000  00000100  RWIX
+  COMP1                 00006400   00000020  00000000  00000020  RWIX
+  COMP2                 00006420   00000020  00000000  00000020  RWIX
+  EPWM1                 00006800   00000040  00000000  00000040  RWIX
+  EPWM2                 00006840   00000040  00000000  00000040  RWIX
+  EPWM3                 00006880   00000040  00000000  00000040  RWIX
+  EPWM4                 000068c0   00000040  00000000  00000040  RWIX
+  ECAP1                 00006a00   00000020  00000000  00000020  RWIX
+  GPIOCTRL              00006f80   00000040  00000000  00000040  RWIX
+  GPIODAT               00006fc0   00000020  00000000  00000020  RWIX
+  GPIOINT               00006fe0   00000020  00000000  00000020  RWIX
+  SYSTEM                00007010   00000020  00000000  00000020  RWIX
+  SPIA                  00007040   00000010  00000000  00000010  RWIX
+  SCIA                  00007050   00000010  00000000  00000010  RWIX
+  NMIINTRUPT            00007060   00000010  00000000  00000010  RWIX
+  XINTRUPT              00007070   00000010  00000000  00000010  RWIX
+  ADC                   00007100   00000080  00000000  00000080  RWIX
+  I2CA                  00007900   00000040  00000000  00000040  RWIX
+  RAML0                 00008000   00000400  00000000  00000400  RWIX
+  PARTID                003d7fff   00000001  00000000  00000001  RWIX
+  CSM_PWL               003f7ff8   00000008  00000000  00000008  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+ramfuncs   0    00000050    00000000     UNINITIALIZED
+
+.cinit     0    003f70dd    0000001a     
+                  003f70dd    0000000e     rts2800_ml.lib : exit.c.obj (.cinit)
+                  003f70eb    00000005                    : _lock.c.obj (.cinit:__lock)
+                  003f70f0    00000005                    : _lock.c.obj (.cinit:__unlock)
+                  003f70f5    00000002     --HOLE-- [fill = 0]
+
+.pinit     0    003f7000    00000000     UNINITIALIZED
+
+.stack     1    00000400    00000300     UNINITIALIZED
+                  00000400    00000300     --HOLE--
+
+.reset     0    003fffc0    00000002     DSECT
+                  003fffc0    00000002     rts2800_ml.lib : boot28.asm.obj (.reset)
+
+vectors    0    003fffc2    00000000     DSECT
+
+.text      0    003f7000    000000dd     
+                  003f7000    00000054     rts2800_ml.lib : boot28.asm.obj (.text)
+                  003f7054    00000029                    : exit.c.obj (.text)
+                  003f707d    00000024                    : cpy_tbl.c.obj (.text)
+                  003f70a1    0000001d                    : memcpy.c.obj (.text)
+                  003f70be    00000011                    : args_main.c.obj (.text)
+                  003f70cf    00000009                    : _lock.c.obj (.text)
+                  003f70d8    00000002     main.obj (.text)
+                  003f70da    00000002     rts2800_ml.lib : pre_init.c.obj (.text)
+                  003f70dc    00000001                    : startup.c.obj (.text)
+
+.ebss      1    00000700    0000000a     UNINITIALIZED
+                  00000700    00000006     rts2800_ml.lib : exit.c.obj (.ebss)
+                  00000706    00000002                    : _lock.c.obj (.ebss:__lock)
+                  00000708    00000002                    : _lock.c.obj (.ebss:__unlock)
+
+MODULE SUMMARY
+
+       Module            code   initialized data   uninitialized data
+       ------            ----   ----------------   ------------------
+    .\
+       main.obj          2      0                  0                 
+    +--+-----------------+------+------------------+--------------------+
+       Total:            2      0                  0                 
+                                                                     
+    C:\ti\ccs1011\ccs\tools\compiler\ti-cgt-c2000_20.2.1.LTS\lib\rts2800_ml.lib
+       boot28.asm.obj    84     0                  0                 
+       exit.c.obj        41     14                 6                 
+       cpy_tbl.c.obj     36     0                  0                 
+       memcpy.c.obj      29     0                  0                 
+       _lock.c.obj       9      10                 4                 
+       args_main.c.obj   17     0                  0                 
+       pre_init.c.obj    2      0                  0                 
+       startup.c.obj     1      0                  0                 
+    +--+-----------------+------+------------------+--------------------+
+       Total:            219    24                 10                
+                                                                     
+       Stack:            0      0                  768               
+    +--+-----------------+------+------------------+--------------------+
+       Grand Total:      221    24                 778               
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000400      10 (00000400)     __stack
+
+00000700      1c (00000700)     ___TI_enable_exit_profile_output
+00000702      1c (00000700)     ___TI_cleanup_ptr
+00000704      1c (00000700)     ___TI_dtors_ptr
+00000706      1c (00000700)     __lock
+00000708      1c (00000700)     __unlock
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                            
+----  -------   ----                            
+abs   ffffffff  .text                           
+0     003f7054  C$$EXIT                         
+abs   00000000  _RamfuncsLoadSize               
+0     00000050  _RamfuncsLoadStart              
+0     00000050  _RamfuncsRunStart               
+1     00000700  __STACK_END                     
+abs   00000300  __STACK_SIZE                    
+1     00000702  ___TI_cleanup_ptr               
+1     00000704  ___TI_dtors_ptr                 
+1     00000700  ___TI_enable_exit_profile_output
+abs   ffffffff  ___TI_pprof_out_hndl            
+abs   ffffffff  ___TI_prof_data_size            
+abs   ffffffff  ___TI_prof_data_start           
+abs   ffffffff  ___binit__                      
+abs   ffffffff  ___c_args__                     
+0     003f70dd  ___cinit__                      
+abs   ffffffff  ___etext__                      
+abs   ffffffff  ___pinit__                      
+abs   ffffffff  ___text__                       
+0     003f70be  __args_main                     
+1     00000706  __lock                          
+0     003f70d7  __nop                           
+0     003f70d3  __register_lock                 
+0     003f70cf  __register_unlock               
+1     00000400  __stack                         
+0     003f70dc  __system_post_cinit             
+0     003f70da  __system_pre_init               
+1     00000708  __unlock                        
+0     003f7054  _abort                          
+0     003f7000  _c_int00                        
+0     003f707d  _copy_in                        
+0     003f7056  _exit                           
+0     003f70d8  _main                           
+0     003f70a1  _memcpy                         
+abs   ffffffff  binit                           
+0     003f70dd  cinit                           
+abs   ffffffff  etext                           
+abs   ffffffff  pinit                           
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                            
+----  -------   ----                            
+0     00000050  _RamfuncsLoadStart              
+0     00000050  _RamfuncsRunStart               
+0     003f7000  _c_int00                        
+0     003f7054  C$$EXIT                         
+0     003f7054  _abort                          
+0     003f7056  _exit                           
+0     003f707d  _copy_in                        
+0     003f70a1  _memcpy                         
+0     003f70be  __args_main                     
+0     003f70cf  __register_unlock               
+0     003f70d3  __register_lock                 
+0     003f70d7  __nop                           
+0     003f70d8  _main                           
+0     003f70da  __system_pre_init               
+0     003f70dc  __system_post_cinit             
+0     003f70dd  ___cinit__                      
+0     003f70dd  cinit                           
+1     00000400  __stack                         
+1     00000700  __STACK_END                     
+1     00000700  ___TI_enable_exit_profile_output
+1     00000702  ___TI_cleanup_ptr               
+1     00000704  ___TI_dtors_ptr                 
+1     00000706  __lock                          
+1     00000708  __unlock                        
+abs   00000000  _RamfuncsLoadSize               
+abs   00000300  __STACK_SIZE                    
+abs   ffffffff  .text                           
+abs   ffffffff  ___TI_pprof_out_hndl            
+abs   ffffffff  ___TI_prof_data_size            
+abs   ffffffff  ___TI_prof_data_start           
+abs   ffffffff  ___binit__                      
+abs   ffffffff  ___c_args__                     
+abs   ffffffff  ___etext__                      
+abs   ffffffff  ___pinit__                      
+abs   ffffffff  ___text__                       
+abs   ffffffff  binit                           
+abs   ffffffff  etext                           
+abs   ffffffff  pinit                           
+
+[38 symbols]
