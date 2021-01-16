@@ -5,7 +5,22 @@
 SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
-CMD_SRCS += \
-../F2802x_Headers_nonBIOS.cmd 
+C_SRCS += \
+../src/main.c 
+
+C_DEPS += \
+./src/main.d 
+
+OBJS += \
+./src/main.obj 
+
+OBJS__QUOTED += \
+"src\main.obj" 
+
+C_DEPS__QUOTED += \
+"src\main.d" 
+
+C_SRCS__QUOTED += \
+"../src/main.c" 
 
 

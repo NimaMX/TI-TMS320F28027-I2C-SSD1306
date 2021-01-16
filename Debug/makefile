@@ -10,7 +10,12 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./main.obj" \
+"./src/bsp/fonts.obj" \
+"./src/bsp/ssd1306.obj" \
+"./src/drv/drv_base.obj" \
+"./src/drv/drv_i2c.obj" \
+"./src/drv/drv_led.obj" \
+"./src/main.obj" \
 "../F2802x_Headers_nonBIOS.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -25,7 +30,13 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include src/bsp/subdir_vars.mk
+-include src/drv/subdir_vars.mk
+-include src/subdir_vars.mk
 -include subdir_rules.mk
+-include src/bsp/subdir_rules.mk
+-include src/drv/subdir_rules.mk
+-include src/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -156,8 +167,8 @@ TI-TMS320F28027-I2C-SSD1306.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" 
-	-$(RM) "main.d" 
+	-$(RM) "src\bsp\fonts.obj" "src\bsp\ssd1306.obj" "src\drv\drv_base.obj" "src\drv\drv_i2c.obj" "src\drv\drv_led.obj" "src\main.obj" 
+	-$(RM) "src\bsp\fonts.d" "src\bsp\ssd1306.d" "src\drv\drv_base.d" "src\drv\drv_i2c.d" "src\drv\drv_led.d" "src\main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
