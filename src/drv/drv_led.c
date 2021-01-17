@@ -7,53 +7,61 @@
 
 #include <drv/drv_led.h>
 
-void ledInitGpio(void) {
+void ledInitGpio(void)
+{
+    EALLOW;
 
     // led error
-    GPIO_setMode(mGpio, GPIO_Number_0, GPIO_0_Mode_GeneralPurpose);
-    GPIO_setDirection(mGpio, GPIO_Number_0, GPIO_Direction_Output);
+    //GpioCtrlRegs.GPAPUD.bit.GPIO0 = 0;  // PULL-UP ENABLED
+    GpioCtrlRegs.GPAMUX1.bit.GPIO0 = 0; // GPIO0
+    GpioCtrlRegs.GPADIR.bit.GPIO0 = 1;  // GPIO DIR
 
     // led  warn
-    GPIO_setMode(mGpio, GPIO_Number_1, GPIO_1_Mode_GeneralPurpose);
-    GPIO_setDirection(mGpio, GPIO_Number_1, GPIO_Direction_Output);
+    //GpioCtrlRegs.GPAPUD.bit.GPIO1 = 0;  // PULL-UP ENABLED
+    GpioCtrlRegs.GPAMUX1.bit.GPIO1 = 0; // GPIO0
+    GpioCtrlRegs.GPADIR.bit.GPIO1 = 1;  // GPIO DIR
 
     // led rx
-    GPIO_setMode(mGpio, GPIO_Number_2, GPIO_2_Mode_GeneralPurpose);
-    GPIO_setDirection(mGpio, GPIO_Number_2, GPIO_Direction_Output);
+    //GpioCtrlRegs.GPAPUD.bit.GPIO2 = 0;  // PULL-UP ENABLED
+    GpioCtrlRegs.GPAMUX1.bit.GPIO2 = 0; // GPIO0
+    GpioCtrlRegs.GPADIR.bit.GPIO2 = 1;  // GPIO DIR
 
     // led tx
-    GPIO_setMode(mGpio, GPIO_Number_3, GPIO_3_Mode_GeneralPurpose);
-    GPIO_setDirection(mGpio, GPIO_Number_3, GPIO_Direction_Output);
+    //GpioCtrlRegs.GPAPUD.bit.GPIO3 = 0;  // PULL-UP ENABLED
+    GpioCtrlRegs.GPAMUX1.bit.GPIO3 = 0; // GPIO0
+    GpioCtrlRegs.GPADIR.bit.GPIO3 = 1;  // GPIO DIR
+
+    EDIS;
 }
 
-void ledErrorUpdate(bool state) {
-
+void ledErrorUpdate(bool state)
+{
     if(state)
-        GPIO_setHigh(mGpio, GPIO_Number_0);
+        GpioDataRegs.GPADAT.bit.GPIO0 = 0x5;
     else
-        GPIO_setLow(mGpio, GPIO_Number_0);
+        GpioDataRegs.GPADAT.bit.GPIO0 = 0xA;
 }
 
-void ledWarningUpdate(bool state) {
-
+void ledWarningUpdate(bool state)
+{
     if(state)
-        GPIO_setHigh(mGpio, GPIO_Number_1);
+        GpioDataRegs.GPADAT.bit.GPIO1 = 0x5;
     else
-        GPIO_setLow(mGpio, GPIO_Number_1);
+        GpioDataRegs.GPADAT.bit.GPIO1 = 0xA;
 }
 
-void ledRxUpdate(bool state) {
-
+void ledRxUpdate(bool state)
+{
     if(state)
-        GPIO_setHigh(mGpio, GPIO_Number_2);
+        GpioDataRegs.GPADAT.bit.GPIO2 = 0x5;
     else
-        GPIO_setLow(mGpio, GPIO_Number_2);
+        GpioDataRegs.GPADAT.bit.GPIO2 = 0xA;
 }
 
-void ledTxUpdate(bool state) {
-
+void ledTxUpdate(bool state)
+{
     if(state)
-        GPIO_setHigh(mGpio, GPIO_Number_3);
+        GpioDataRegs.GPADAT.bit.GPIO3 = 0x5;
     else
-        GPIO_setLow(mGpio, GPIO_Number_3);
+        GpioDataRegs.GPADAT.bit.GPIO3 = 0xA;
 }

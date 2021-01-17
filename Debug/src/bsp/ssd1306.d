@@ -3,7 +3,7 @@
 src/bsp/ssd1306.obj: ../src/bsp/ssd1306.c
 src/bsp/ssd1306.obj: C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/bsp/ssd1306.h
 src/bsp/ssd1306.obj: C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/drv/drv_i2c.h
-src/bsp/ssd1306.obj: C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/bsp/fonts.h
+src/bsp/ssd1306.obj: C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/drv/drv_base.h
 src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/DSP28x_Project.h
 src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/headers/include/F2802x_Device.h
 src/bsp/ssd1306.obj: C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/assert.h
@@ -41,6 +41,18 @@ src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/comm
 src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/f2802x_epwm_defines.h
 src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/f2802x_i2c_defines.h
 src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/f2802x_defaultisr.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/gpio.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/cpu.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/clk.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/pwm.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/pie.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/adc.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/sci.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/spi.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/flash.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/pll.h
+src/bsp/ssd1306.obj: C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/wdog.h
+src/bsp/ssd1306.obj: C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/bsp/fonts.h
 src/bsp/ssd1306.obj: C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/string.h
 src/bsp/ssd1306.obj: C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/stdlib.h
 src/bsp/ssd1306.obj: C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/stdlibf.h
@@ -48,7 +60,7 @@ src/bsp/ssd1306.obj: C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/in
 ../src/bsp/ssd1306.c: 
 C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/bsp/ssd1306.h: 
 C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/drv/drv_i2c.h: 
-C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/bsp/fonts.h: 
+C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/drv/drv_base.h: 
 C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/DSP28x_Project.h: 
 C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/headers/include/F2802x_Device.h: 
 C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/assert.h: 
@@ -86,6 +98,18 @@ C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/f2802x_glo
 C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/f2802x_epwm_defines.h: 
 C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/f2802x_i2c_defines.h: 
 C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/f2802x_defaultisr.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/gpio.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/cpu.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/clk.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/pwm.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/pie.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/adc.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/sci.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/spi.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/flash.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/pll.h: 
+C:/ti/c2000/C2000Ware_3_03_00_00/device_support/f2802x/common/include/wdog.h: 
+C:/Users/Nima_/workspace_v10/TI-TMS320F28027-I2C-SSD1306/inc/bsp/fonts.h: 
 C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/string.h: 
 C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/stdlib.h: 
 C:/ti/ccs1011/ccs/tools/compiler/ti-cgt-c2000_20.2.1.LTS/include/stdlibf.h: 

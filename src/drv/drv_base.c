@@ -43,7 +43,6 @@ void initInternalClk(void)
 void initPerherialsReq(void)
 {
     mGpio = GPIO_init((void*) GPIO_BASE_ADDR, sizeof(GPIO_Obj));
-
     CLK_enableI2cClock(mClk);
 }
 
@@ -54,6 +53,12 @@ void initFlash(void)
 
 void enablePIE(void)
 {
-    PIE_setDebugIntVectorTable(mPie);
+    DINT;
     PIE_enable(mPie);
+
+    IER = 0x0000;
+    IFR = 0x0000;
+
+    PIE_setDebugIntVectorTable(mPie);
+
 }

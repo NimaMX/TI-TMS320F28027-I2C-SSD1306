@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "DSP28x_Project.h"
+#include "drv_base.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -16,17 +16,22 @@ extern "C" {
 /**
  *
  */
-void i2cInit(void);
+void i2cInit(uint8_t slaveAddress);
 
 /**
  *
  */
-void i2cWriteData(uint8_t *buf, uint8_t slaveAddress, uint8_t len);
+uint8_t i2cWriteData(uint8_t slaveAddress, uint8_t *buf, size_t len);
 
 /**
  *
  */
 void i2cReadData(uint8_t *buf, uint8_t slaveAddress, uint8_t len);
+
+/**
+ *
+ */
+__interrupt void i2cFirstInt(void);
 
 #ifdef __cplusplus
 }

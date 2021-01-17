@@ -424,25 +424,16 @@ void SSD1306_OFF(void) {
 }
 
 void ssd1306_I2C_WriteMulti(uint8_t address, uint8_t reg, uint8_t* data, uint16_t count) {
+
     uint8_t tempBuff = 0x40;
 
-    int8_t err = i2cm_Start(I2C2 , address, 0 , 1000);
-  if (!err)
-  {
-    i2cm_WriteBuff(I2C2, &tempBuff , 1, 1000);
-    i2cm_WriteBuff(I2C2 , data , count , 1000);
-  }
-  i2cm_Stop(I2C2 , 1000);
+    i2cWriteData(address, &tempBuff, 1);
+    i2cWriteData(address, data, count);
 }
 
 
 void ssd1306_I2C_Write(uint8_t address, uint8_t reg, uint8_t data) {
 
-  int8_t err = i2cm_Start(I2C2 , address, 0 , 1000);
-  if (!err)
-  {
-    i2cm_WriteBuff(I2C2, &reg , 1, 1000);
-    i2cm_WriteBuff(I2C2 , &data , 1 , 1000);
-  }
-  i2cm_Stop(I2C2 , 1000);
+    i2cWriteData(address, &reg, 1);
+    i2cWriteData(address, &data, 1);
 }
